@@ -81,5 +81,7 @@
 v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
 相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
 一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。
-18.
+18. Vue组件报错[You are using the runtime-only build of Vue where the template compiler is not available.](https://www.cnblogs.com/makalochen/p/13994493.html)。
+19. 用 v-for 指令基于一个数组来渲染一个列表。v-for 指令需要使用 (item, index) in items 形式的特殊语法，其中 items 是源数据数组，而 item 则是被迭代的数组元素的别名。
+20. 为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 key attribute。不要使用对象或数组之类的非基本类型值作为 v-for 的 key。请用字符串或数值类型的值。
 

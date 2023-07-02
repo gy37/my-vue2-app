@@ -80,7 +80,7 @@ export default {
 <style scoped>
 .computed {}
 
-button {
-  margin-left: 8px;
+span {
+  margin-right: 8px;
 }
 </style>

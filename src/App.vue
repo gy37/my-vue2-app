@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" class="logo">
     <ComputedWatch />
+    <VIf />
+    <VFor />
+    <img alt="Vue logo" src="./assets/logo.png" class="logo">
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
@@ -9,11 +11,15 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import ComputedWatch from './components/ComputedWatch.vue'
+import VIf from './components/VIf.vue';
+import VFor from './components/VFor.vue';
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    ComputedWatch
+    ComputedWatch,
+    VIf,
+    VFor,
   }
 }
 </script>
@@ -30,5 +36,9 @@ export default {
 
 .logo {
   width: 100px;
+}
+
+label {
+  margin-right: 8px;
 }
 </style>
