@@ -84,4 +84,16 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 18. Vue组件报错[You are using the runtime-only build of Vue where the template compiler is not available.](https://www.cnblogs.com/makalochen/p/13994493.html)。
 19. 用 v-for 指令基于一个数组来渲染一个列表。v-for 指令需要使用 (item, index) in items 形式的特殊语法，其中 items 是源数据数组，而 item 则是被迭代的数组元素的别名。
 20. 为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 key attribute。不要使用对象或数组之类的非基本类型值作为 v-for 的 key。请用字符串或数值类型的值。
-
+21. 可以用 v-on 指令监听 DOM 事件，并在触发时运行一些 JavaScript 代码和方法。
+22. 有时也需要在内联语句处理器中访问原始的 DOM 事件。可以用特殊变量 $event 把它传入方法。
+23. Vue.js 为 v-on 提供了事件修饰符。之前提过，修饰符是由点开头的指令后缀来表示的。`.stop阻止事件继续传播 .prevent阻止默认时间 .capture添加事件监听器时使用事件捕获模式 .self只当在 event.target 是当前元素自身时触发处理函数 .once事件将只会触发一次 .passive事件的默认行为 (即滚动行为) 将会立即触发`。
+24. Vue 允许为 v-on 在监听键盘事件时添加按键修饰符：`v-on:keyup.enter`只有在 `key` 是 `Enter` 时调用事件。
+25. 想把值绑定到 Vue 实例的一个动态 property 上，这时可以用 v-bind 实现，并且这个 property 的值可以不是字符串。v-bind指令主要用于响应式的更新html属性，一般我们要想在元素节点的属性上绑定vue的data数据，是不可以直接使用{{ }}插入值语法来使用。
+26. Vue中局部和全局组件，通过 Vue.component 全局注册组件，https://blog.csdn.net/qq_44163269/article/details/105063803
+27. 组件中data 必须是一个函数，每个实例可以维护一份被返回对象的独立的拷贝。
+28. Prop 是你可以在组件上注册的一些自定义 attribute。当一个值传递给一个 prop attribute 的时候，它就变成了那个组件实例的一个 property。我们可以使用 v-bind 来动态传递 prop。
+29. 父组件通过v-on:enlarge-text传递事件给子组件，子组件中通过v-on:click="$emit('enlarge-text')"触发父组件中的事件；$emit也可以通过第二个参数传值，父组件中通过$event访问传来的值，也可以作为函数参数取到；
+30. 自定义input组件，v-model==v-bind:value + v-on:input，将其 value attribute 绑定到一个名叫 value 的 prop 上，在其 input 事件被触发时，将新的值通过自定义的 input 事件抛出。
+31. 插槽，向组件中传递内容，类似React中的children。
+32. 通过 Vue 的 <component> 元素加一个特殊的 is attribute 来实现动态组件。
+33.
